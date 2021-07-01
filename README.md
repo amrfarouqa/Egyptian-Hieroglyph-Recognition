@@ -1,4 +1,4 @@
-# Egyptian Hieroglyphic Recognition - KTU Masters Project
+# Egyptian Hieroglyphic Recognition - KTU Informatics Masters Project
 
 <img src="Images/thothlogo.png">
 
