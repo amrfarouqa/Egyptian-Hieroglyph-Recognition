@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Transliterate | Egyptian Hieroglyph Recognition</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="init/js/jquery.min.js"></script>
+	<script src="init/js/jquery.dropotron.min.js"></script>
+	<script src="init/js/jquery.scrollgress.min.js"></script>
+	<script src="init/js/jquery.scrolly.min.js"></script>
+	<script src="init/js/jquery.slidertron.min.js"></script>
+	<script src="init/js/skel.min.js"></script>
+	<script src="init/js/skel-layers.min.js"></script>
+	<script src="init/js/init.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="init/css/skel.css" />
+		<link rel="stylesheet" href="init/css/style.css" />
+		<link rel="stylesheet" href="init/css/style-xlarge.css" />
+	</noscript>
+	<link href="init/images/fav.png" rel="icon" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header id="header" class="skel-layers-fixed">
+		<h1><a href="index.html">Egyptian Hieroglyphic Recognition: Transliteration Technique <span>by Amr Farouq</span></a>
+		</h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="transliterate.html">Transliterate</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<button onclick="topFunction()" id="myTopBtn" title="Go to top">Top</button>
+	<!-- Main -->
+	<section id="main" class="wrapper style1">
+		<header class="major">
+			<h2>Egyptian Hieroglyph Recognition | Transliterate</h2>
+			<h3><span><img src="init/images/logo.png" alt="logo" width="250px;" /></span></h3>
+		</header>
+		<div class="container">
+
+			<!-- Content -->
+			<section id="content">
+				<!-- Form -->
+				<section>
+					<div id="transliterate_choices">
+						<ul class="actions" id="homeButtons" style="margin-top: 20px;">
+	                        <li><a onclick="showAreas('ENtoHG')" class="button special fit">Transliterate From English To Hieroglyph</a></li>
+	                        <li><a onclick="showAreas('HGtoEN')" class="button special fit">Transliterate From Hieroglyph To English</a></li>
+                    	</ul>
+					</div>
+
+					<form id="form_transliterate">
+						<div>
+							<h2 style="text-align: center;">Text</h2>
+							<textarea style="height: 200px;" placeholder="" id="textarea-en"></textarea>
+						</div>
+						
+						<div style="margin-top: 20px;">
+							<h2 style="text-align: center;">Hieroglyphs</h2>
+							<textarea style="height: 200px;"  id="textarea-hg"></textarea>
+						</div>
+
+
+                    	<ul class="actions" id="homeButtons" style="margin-top: 20px;">
+	                        <li><a onclick="transliterate()" class="button special fit">Transliterate
+								</a></li>
+	                        <li><a onclick="resetTextAreas()" class="button special fit">Reset</a></li>
+	                        <li><a onclick="changeTargetLang()" class="button special fit">Change Target Language</a></li>
+                    	</ul>
+
+					</form>
+					<hr />
+				</section>
+			</section>
+
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<span class="copyright">
+			&copy; Copyright. All rights reseconditioned. Design by <a href="https://amrfarouqa.website"
+				target="_blank">Amr
+				Farouq</a>
+		</span>
+	</footer>
+
+
+	<script>
+
+		var divFORM = document.getElementById('form_transliterate');
+		var divCHOICES = document.getElementById('transliterate_choices');
+		var areaEN = document.getElementById('textarea-en');
+		var areaHG = document.getElementById('textarea-hg');
+
+		var changeTxtToooo;
+
+		function showAreas(name){
+			if(name == "ENtoHG"){
+				divFORM.style.display = "block";
+				divCHOICES.style.display = "none";
+				areaHG.disabled = true;
+				areaEN.focus();
+				changeTxtToooo = "ENtoHG";
+			}else{
+				divFORM.style.display = "block";
+				divCHOICES.style.display = "none";
+				areaEN.disabled = true;
+				areaHG.focus();
+				changeTxtToooo = "HGtoEN";
+			}
+		}
+
+
+		function changeTxtToHG(){ 
+			areaHG.value = areaEN.value;
+		}
+
+		function changeTxtToEN(){ 
+			areaEN.value = areaHG.value;
+		}
+
+		function resetTextAreas(){
+			areaHG.value = "";
+			areaEN.value = "";
+		}
+
+		function transliterate(){
+			if(changeTxtToooo == "ENtoHG"){
+				if (areaEN.value != ''){
+					changeTxtToHG();
+				}else{
+					alert("Text Area Is Empty!");
+				}
+			}else{
+				if (areaHG.value != ''){
+					changeTxtToEN();
+				}else{
+					alert("Text Area Is Empty!");
+				}
+			}
+		}
+
+		function changeTargetLang(){
+			areaHG.value = "";
+			areaEN.value = "";
+			changeTxtToooo = "";
+			divFORM.style.display = "none";
+			divCHOICES.style.display = "block";
+			areaHG.disabled = false;
+			areaEN.disabled = false;
+		}
+
+	</script>
+</body>
+
+</html>

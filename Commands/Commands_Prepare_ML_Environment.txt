@@ -1,0 +1,9 @@
+download and install Anaconda Graphical Installer From: https://www.anaconda.com/distribution/
+
+conda update conda
+conda update anaconda
+
+conda update scikit-learn
+conda install theano
+conda install -c conda-forge tensorflow
+pip install keras
