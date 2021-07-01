@@ -1,6 +1,6 @@
 # Egyptian Hieroglyphic Recognition - KTU Masters Project
 
-<img src="images/thothlogo.png">
+<img src="Images/thothlogo.png">
 
 > Kaunas Technology University MSc Informatics Research Project
 
